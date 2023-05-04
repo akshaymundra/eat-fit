@@ -1,0 +1,154 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Quicksand:wght@400;700&family=Roboto&display=swap'); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* for removing the arrows of input type number  */
+@layer base {
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number'] {
+      -webkit-appearance: none;
+      margin: 0;
+      -moz-appearance: textfield !important;
+    }
+ }
+
+*{
+    font-family: cursive, sans-serif, serif;
+    color: white;
+    box-sizing: border-box;
+}
+html, body{
+    scroll-behavior: smooth;
+}
+
+
+.head{
+    @apply text-3xl md:text-4xl mt-20 md:mt-2 mx-2 shadow bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 md:from-slate-900 md:to-slate-900 rounded
+}
+
+/* landing page  */
+.hero{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("./assets/veggies.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.hero-attract{
+    /* color: #b9d3ff; */
+    color: #0ea5e9;
+}
+.slide{
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+.landing-link{
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.landing-link-cont:hover .landing-link{
+    translate: 10px;
+    color: #0ea5e9;
+}
+
+
+/* nav bar  */
+.nav-link{
+    transition: all 100ms ease-in;
+    @apply m-1 mt-3 cursor-pointer md:text-right
+}
+.nav-link:hover{
+    translate: -7px 0px;
+    color: #0ea5e9;
+}
+
+/* style for nav link on smaller screens */
+.nav-link-ss{
+    transition: 100ms ease;
+    @apply m-1 mt-6 cursor-pointer text-center p-1
+}
+.nav-link-ss:hover{
+    color: #0ea5e9;
+    letter-spacing: 3px;
+}
+/* nav link container  */
+#nav-link-cont{
+    height: 100%;   
+    width: 0;
+    z-index: 1;
+    overflow: hidden;
+    position: fixed;
+    top: 3.5rem;
+    transition: .75s;
+}
+
+
+
+/* calorie tracker  */
+.ct-sr-macros{
+    @apply ml-2 mt-3 text-sm flex items-center
+}
+.slide-cont{
+    overflow-x: hidden;
+}
+.pop-food{
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    @apply bg-slate-900 hover:bg-slate-800 p-1 border-b border-dashed border-slate-500 hover:rounded text-sm cursor-pointer
+}
+.slide-in{
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+}
+
+
+/* bmi */
+.ms-btn{
+    @apply px-2 py-1 m-1 mb-0 rounded-t-lg text-xl hover:underline decoration-solid decoration-white cursor-pointer transition duration-200 
+}
+.hw-cont{
+    @apply m-2 my-4 p-2 flex flex-col md:block
+}
+.hw-input{
+    @apply py-1 px-2 rounded bg-slate-700 text-white hover:bg-slate-600 transition
+}
+
+
+/* daily needs  */
+.gender-btn{
+    @apply px-3 py-2 m-2 rounded hover:bg-slate-700 hover:text-sky-500 transition duration-300 ease-in-out
+}
+.dn-label{
+    @apply text-sm text-slate-400 block my-1
+}
+.dn-inputs{
+    @apply rounded text-slate-200 bg-slate-700 hover:bg-slate-600 px-2 w-32
+}
+.dn-women-info-input{
+    @apply accent-pink-500
+}
+.dn-select-options{
+    @apply bg-slate-800 text-slate-300 text-xs
+}
+.dn-select {
+    width: 200px;
+    max-width: 100%;
+    /* So it doesn't overflow from it's parent */
+  }
+.dn-option {
+    /* wrap text in compatible browsers */
+    -moz-white-space: pre-wrap;
+    -o-white-space: pre-wrap;
+    white-space: pre-wrap;
+    /* hide text that can't wrap with an ellipsis */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#dn-results{
+    scroll-margin: 50px;
+}
